@@ -1,6 +1,6 @@
-# tech_blog_app_3
+# tech_blog
 
-A new Flutter project.
+A Flutter project.
 
 ## Getting Started
 
