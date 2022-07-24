@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();
@@ -41,7 +41,7 @@ class $AssetsImagesGen {
   AssetGenImage get avatar => const AssetGenImage('assets/images/avatar.png');
 
   /// File path: assets/images/tcbot.svg
-  // SvgGenImage get tcbot => const SvgGenImage('assets/images/tcbot.svg');
+  SvgGenImage get techbot => const SvgGenImage('assets/images/techbot.svg');
 }
 
 class Assets {

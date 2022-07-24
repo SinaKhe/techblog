@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tech_blog_app_3/my_colors.dart';
 
-class techDivider extends StatelessWidget {
-  const techDivider({
+class TechDivider extends StatelessWidget {
+  const TechDivider({
     Key? key,
     required this.size,
   }) : super(key: key);

@@ -44,18 +44,16 @@ class _MainScreenState extends State<MainScreen> {
         body: Stack(
           children: [
             // SingleChildScrollView
-            Center(
-              child: Positioned.fill(
-                  child: IndexedStack(
-                index: selectedPageIndex,
-                children: [
-                  homeScreen(
-                      size: size, textTheme: textTheme, bodyMargin: bodyMargin),
-                  profileScreen(
-                      size: size, textTheme: textTheme, bodyMargin: bodyMargin),
-                ],
-              )),
-            ),
+            Positioned.fill(
+                child: IndexedStack(
+              index: selectedPageIndex,
+              children: [
+                homeScreen(
+                    size: size, textTheme: textTheme, bodyMargin: bodyMargin),
+                profileScreen(
+                    size: size, textTheme: textTheme, bodyMargin: bodyMargin),
+              ],
+            )),
 
             // Positioned => Extract to BottomNavigation
             BottomNavigation(
