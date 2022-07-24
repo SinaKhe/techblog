@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:tech_blog_app_3/gen/assets.gen.dart';
 import 'package:tech_blog_app_3/my_colors.dart';
-import 'package:tech_blog_app_3/splash_screen.dart';
+import 'package:tech_blog_app_3/view/splash_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -58,7 +57,7 @@ class MyApp extends StatelessWidget {
               headline3: TextStyle(
                   fontFamily: 'dana',
                   fontSize: 14,
-                  color: Colors.red,
+                  color: SolidColors.titleandseeColor,
                   fontWeight: FontWeight.w700), //headline3 red color
 
               //
@@ -69,7 +68,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.w700))), // headline4 green color
 
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

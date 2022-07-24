@@ -4,11 +4,13 @@ class SolidColors {
   //
   static const Color primeryColor = Color.fromARGB(255, 68, 4, 87);
 
+  static const Color dividerColor = Color.fromARGB(255, 112, 112, 112);
+
   static const Color posterTitleColor = Color.fromARGB(255, 255, 255, 255);
 
   static const Color posterSubTitleColor = Color.fromARGB(200, 255, 255, 255);
 
-  static const Color titleColor = Color.fromARGB(255, 40, 107, 184);
+  static const Color titleandseeColor = Color.fromARGB(255, 40, 107, 184);
 
   static const Color texttitleColor = Color.fromARGB(255, 0, 0, 0);
 
@@ -34,18 +36,28 @@ class SolidColors {
 class GradiantColors {
   //
   static const List<Color> bottomNav = [
-    const Color.fromARGB(255, 25, 0, 94),
-    const Color.fromARGB(255, 68, 4, 87),
+    Color.fromARGB(255, 25, 0, 94),
+    Color.fromARGB(255, 68, 4, 87),
+  ];
+
+  static const List<Color> bottomNavBackGroundColor = [
+    Color.fromARGB(0, 255, 255, 255),
+    Color.fromARGB(255, 255, 255, 255),
   ];
 
   static const List<Color> tags = [
-    const Color.fromARGB(255, 0, 0, 0),
-    const Color.fromARGB(255, 63, 63, 63),
+    Color.fromARGB(255, 0, 0, 0),
+    Color.fromARGB(255, 63, 63, 63),
+  ];
+
+  static const List<Color> blogPost = [
+    Color.fromARGB(255, 0, 0, 0),
+    Color.fromARGB(0, 0, 0, 0),
   ];
 
   static const List<Color> homePosterCoverGradiant = [
-    const Color.fromARGB(0, 0, 0, 0),
-    const Color.fromARGB(195, 72, 20, 88),
-    const Color.fromARGB(255, 28, 20, 81),
+    Color.fromARGB(0, 0, 0, 0),
+    Color.fromARGB(195, 72, 20, 88),
+    Color.fromARGB(255, 28, 20, 81),
   ];
 }
