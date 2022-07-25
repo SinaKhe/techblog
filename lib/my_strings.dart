@@ -13,5 +13,5 @@ class MyStrings {
 برای ارسال مطلب و پادکست باید حتما 
 ثبت نام کنی """; // wlc = welcome .. Sh = Should .. Su = Sign up
 
-  static const String letsGo = "بزن بریم ";
+  static const String plsInsertEmail = "لطفا ایمیلت رو وارد کن";
 }
