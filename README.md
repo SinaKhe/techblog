@@ -1,6 +1,7 @@
 # tech_blog
 
-A Flutter project.
+A Flutter project
+Name: Tech Blog.
 
 ## Getting Started
 
