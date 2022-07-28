@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tech_blog_app_3/my_colors.dart';
 import 'package:tech_blog_app_3/view/main_screen.dart';
+import 'package:tech_blog_app_3/view/my_cats.dart';
 // import 'package:tech_blog_app_3/view/register_intro.dart';
 // import 'package:tech_blog_app_3/view/splash_screen.dart';
 
@@ -104,6 +105,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // home: const SplashScreen(),
       // home: const RegisterIntro(),
+      // home: const MainScreen(),
+      // home: const MyCats(),
       home: const MainScreen(),
     );
   }

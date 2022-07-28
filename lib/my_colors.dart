@@ -6,6 +6,8 @@ class SolidColors {
 
   static const Color dividerColor = Color.fromARGB(255, 112, 112, 112);
 
+  static const Color surfaceColor = Color.fromARGB(255, 242, 242, 242);
+
   static const Color posterTitleColor = Color.fromARGB(255, 255, 255, 255);
 
   static const Color posterSubTitleColor = Color.fromARGB(200, 255, 255, 255);
@@ -14,8 +16,7 @@ class SolidColors {
 
   static const Color texttitleColor = Color.fromARGB(255, 0, 0, 0);
 
-  static const Color scafoldbackgroundColor =
-      Color.fromARGB(255, 255, 255, 255);
+  static const Color scafoldBGColor = Color.fromARGB(255, 255, 255, 255);
 
   static const Color statusBarColor = Color.fromARGB(255, 255, 255, 255);
 

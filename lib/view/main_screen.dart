@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tech_blog_app_3/gen/assets.gen.dart';
 import 'package:tech_blog_app_3/my_colors.dart';
+import 'package:tech_blog_app_3/my_strings.dart';
 import 'package:tech_blog_app_3/view/home_screen.dart';
 import 'package:tech_blog_app_3/view/profile_screen.dart';
 
@@ -10,6 +11,8 @@ class MainScreen extends StatefulWidget {
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
+
+final GlobalKey<ScaffoldState> _key = GlobalKey();
 
 class _MainScreenState extends State<MainScreen> {
   var selectedPageIndex = 0;
@@ -24,13 +27,91 @@ class _MainScreenState extends State<MainScreen> {
 
     return SafeArea(
       child: Scaffold(
+        key: _key,
+
+        // drawer
+        drawer: Drawer(
+          backgroundColor: SolidColors.scafoldBGColor,
+          child: Padding(
+            padding: EdgeInsets.only(right: bodyMargin, left: bodyMargin),
+            child: ListView(children: [
+              DrawerHeader(
+                child: Center(
+                  child: Image.asset(
+                    Assets.images.logo.path,
+                    scale: 3,
+                  ),
+                ),
+              ),
+
+              // ListTitle : 1  پروفایل کاربری
+              ListTile(
+                title: Text(
+                  "پروفایل کاربری",
+                  style: textTheme.headline4,
+                ),
+                onTap: () {},
+              ),
+              // Divider : 1
+              const Divider(
+                color: SolidColors.dividerColor,
+              ),
+
+              // ListTitle : 2  درباره تک‌بلاگ
+              ListTile(
+                title: Text(
+                  "درباره تک‌بلاگ",
+                  style: textTheme.headline4,
+                ),
+                onTap: () {},
+              ),
+              // Divider : 2
+              const Divider(
+                color: SolidColors.dividerColor,
+              ),
+
+              // ListTitle : 3  اشتراک گذاری تک بلاگ
+              ListTile(
+                title: Text(
+                  "اشتراک گذاری تک بلاگ",
+                  style: textTheme.headline4,
+                ),
+                onTap: () {},
+              ),
+              // Divider : 3
+              const Divider(
+                color: SolidColors.dividerColor,
+              ),
+
+              // ListTitle : 4  تک‌بلاگ در گیت هاب
+              ListTile(
+                title: Text(
+                  "تک‌بلاگ در گیت هاب",
+                  style: textTheme.headline4,
+                ),
+                onTap: () {},
+              ),
+              // Divider : 4
+              const Divider(
+                color: SolidColors.dividerColor,
+              ),
+            ]),
+          ),
+        ),
+
+        // appBar
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           elevation: 0,
-          backgroundColor: SolidColors.scafoldbackgroundColor,
+          backgroundColor: SolidColors.scafoldBGColor,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const Icon(Icons.menu, color: Colors.black),
+              InkWell(
+                  onTap: (() {
+                    _key.currentState!.openDrawer();
+                  }),
+                  child: const Icon(Icons.menu, color: Colors.black)),
               Image(
                 image: Image.asset(Assets.images.logo.path).image,
                 height: size.height / 13.6,
@@ -87,7 +168,7 @@ class BottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 0,
+      bottom: 8,
       right: 0,
       left: 0,
       child: Container(

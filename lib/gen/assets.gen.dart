@@ -24,6 +24,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/user.png
   AssetGenImage get write => const AssetGenImage('assets/icons/write.png');
 
+  /// File path: assets/icons/down_cat_arrow.png
+  AssetGenImage get down_cat_arrow =>
+      const AssetGenImage('assets/icons/down_cat_arrow.png');
+
   /// File path: assets/icons/write.png
   // AssetGenImage get write => const AssetGenImage('assets/icons/write.png');
 }

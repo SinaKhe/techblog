@@ -21,6 +21,8 @@ List<HashTagModel> tagList = [
   HashTagModel(title: "پادکست رادیو کدیاد"),
 ];
 
+List<HashTagModel> selectedTagesList = [];
+
 List<BlogModel> blogList = [
   BlogModel(
       id: 1,

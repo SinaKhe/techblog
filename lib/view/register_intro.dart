@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tech_blog_app_3/gen/assets.gen.dart';
 import 'package:tech_blog_app_3/my_strings.dart';
+import 'package:tech_blog_app_3/view/my_cats.dart';
+import 'package:validators/validators.dart';
 
 class RegisterIntro extends StatelessWidget {
   const RegisterIntro({Key? key}) : super(key: key);
@@ -80,7 +82,9 @@ class RegisterIntro extends StatelessWidget {
                     padding: const EdgeInsets.all(24),
                     child: TextField(
                       onChanged: (value) {
-                        // TODO: print(value + " is Email = " + isEmale.hasMatch(value).toString());
+                        //  print(value + " is Email = " + isEmale.hasMatch(value).toString());
+
+                        print(value + "is email :" + isEmail(value).toString());
                       },
                       style: textTheme.headline5,
                       textAlign: TextAlign.center,
@@ -91,7 +95,69 @@ class RegisterIntro extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                      onPressed: (() {}), child: const Text("ادامه")),
+                      onPressed: (() {
+                        Navigator.pop(context);
+                        _activateCodeBottomSheet(context, size, textTheme);
+                      }),
+                      child: const Text("ادامه")),
+                ],
+              )),
+            ),
+          );
+        }));
+  }
+
+  Future<dynamic> _activateCodeBottomSheet(
+      BuildContext context, Size size, TextTheme textTheme) {
+    // RegExp isEmale = RegExp('^[a-z-0-9]+@');
+
+    return showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        backgroundColor: Colors.transparent,
+        builder: ((context) {
+          // return Container()
+          return Padding(
+            padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom),
+            child: Container(
+              height: size.height / 3,
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  )),
+              child: Center(
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    MyStrings.plsInsertActivateCode,
+                    style: textTheme.headline4,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: TextField(
+                      onChanged: (value) {
+                        //  print(value + " is Email = " + isEmale.hasMatch(value).toString());
+
+                        print(value + "is email :" + isEmail(value).toString());
+                      },
+                      style: textTheme.headline5,
+                      textAlign: TextAlign.center,
+                      decoration: InputDecoration(
+                        hintText: "******",
+                        hintStyle: textTheme.headline5,
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                      onPressed: (() {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => const MyCats()));
+                      }),
+                      child: const Text("ادامه")),
                 ],
               )),
             ),

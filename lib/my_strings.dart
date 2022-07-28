@@ -7,6 +7,8 @@ class MyStrings {
   static const String imageProfileEdite = "ویرایش عکس پروفایل";
   static const String myFavoriteBlogs = "مقالات مورد علاقه من";
   static const String myFavoritePodcasts = "پادکست های مورد علاقه من";
+  static const String selectYourFavorites =
+      "دسته بندی هایی که دوست داری رو انتخاب کن";
   static const String logOut = "خروج از حساب کاربری";
   static const String wlcShSu = """به تک‌بلاگ خوش اومدی
 
@@ -14,4 +16,7 @@ class MyStrings {
 ثبت نام کنی """; // wlc = welcome .. Sh = Should .. Su = Sign up
 
   static const String plsInsertEmail = "لطفا ایمیلت رو وارد کن";
+  static const String plsInsertActivateCode = "کد فعال سازی رو وارد کن";
+  static const String emailIsOk = """تبریک میگم ، ایمیل با موفقیت تایید شد
+لطفا اطلاعات ثبت نام رو کامل کن""";
 }
