@@ -49,7 +49,7 @@ class RegisterIntro extends StatelessWidget {
 
   Future<dynamic> _showEmailBottomSheet(
       BuildContext context, Size size, TextTheme textTheme) {
-    // TODO:    RegExp isEmale = RegExp('^[a-z-0-9]+@');
+    // RegExp isEmale = RegExp('^[a-z-0-9]+@');
 
     return showModalBottomSheet(
         isScrollControlled: true,
