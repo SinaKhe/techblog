@@ -90,7 +90,7 @@ class _MyCatsState extends State<MyCats> {
                                         .contains(tagList[index])) {
                                       selectedTagesList.add(tagList[index]);
                                     } else {
-                                      print("${tagList[index]}  exist");
+                                      print("${tagList[index].title}  exist");
                                     }
                                   });
                                 }),
