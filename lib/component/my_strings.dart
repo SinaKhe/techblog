@@ -1,4 +1,5 @@
 class MyStrings {
+  static const String techBlogGithubUrl = "https://github.com/SinaKhe/techblog";
   static const String viewHotestBlog = "مشاهده داغ ترین نوشته ها";
   static const String viewHotestPodCasts = "مشاهده داغ ترین پادکست ها";
   static const String relatedArticle = "نوشته های مرتبط";
@@ -19,4 +20,12 @@ class MyStrings {
   static const String plsInsertActivateCode = "کد فعال سازی رو وارد کن";
   static const String emailIsOk = """تبریک میگم ، ایمیل با موفقیت تایید شد
 لطفا اطلاعات ثبت نام رو کامل کن""";
+
+  static const String shareText = """
+
+من از تک بلاگ استفاده می کنم ، خیلی باحاله! تو هم داشته باشش\n
+
+www.sasansafari.com
+
+""";
 }
