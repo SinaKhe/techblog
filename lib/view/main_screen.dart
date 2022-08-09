@@ -2,6 +2,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:tech_blog_app_3/component/my_component.dart';
 import 'package:tech_blog_app_3/component/my_strings.dart';
 import 'package:tech_blog_app_3/gen/assets.gen.dart';
 import 'package:tech_blog_app_3/component/my_colors.dart';
@@ -90,7 +91,9 @@ class MainScreen extends StatelessWidget {
                   "تک‌بلاگ در گیت هاب",
                   style: textTheme.headline4,
                 ),
-                onTap: () {},
+                onTap: () {
+                  myLaunchUrl(MyStrings.techBlogGithubUrl);
+                },
               ),
               // Divider : 4
               const Divider(
