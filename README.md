@@ -1,6 +1,6 @@
-# tech_blog
+# Tech Blog
 
-A Flutter project.
+A Flutter project with GetX.
 
 ## Getting Started
 
