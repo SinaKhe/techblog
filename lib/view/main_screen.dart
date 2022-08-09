@@ -1,21 +1,20 @@
+// Get X
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:tech_blog_app_3/component/my_strings.dart';
 import 'package:tech_blog_app_3/gen/assets.gen.dart';
-import 'package:tech_blog_app_3/my_colors.dart';
-import 'package:tech_blog_app_3/my_strings.dart';
+import 'package:tech_blog_app_3/component/my_colors.dart';
+// import 'package:tech_blog_app_3/component/my_strings.dart;
 import 'package:tech_blog_app_3/view/home_screen.dart';
 import 'package:tech_blog_app_3/view/profile_screen.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
-
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
 final GlobalKey<ScaffoldState> _key = GlobalKey();
 
-class _MainScreenState extends State<MainScreen> {
-  var selectedPageIndex = 0;
+class MainScreen extends StatelessWidget {
+  RxInt selectedPageIndex = 0.obs;
+
+  MainScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
       child: Scaffold(
         key: _key,
 
-        // drawer
+        // {< drawer
         drawer: Drawer(
           backgroundColor: SolidColors.scafoldBGColor,
           child: Padding(
@@ -76,7 +75,9 @@ class _MainScreenState extends State<MainScreen> {
                   "اشتراک گذاری تک بلاگ",
                   style: textTheme.headline4,
                 ),
-                onTap: () {},
+                onTap: () async {
+                  await Share.share(MyStrings.shareText);
+                },
               ),
               // Divider : 3
               const Divider(
@@ -98,6 +99,7 @@ class _MainScreenState extends State<MainScreen> {
             ]),
           ),
         ),
+        // drawer >}
 
         // appBar
         appBar: AppBar(
@@ -126,24 +128,30 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             // SingleChildScrollView
             Positioned.fill(
-                child: IndexedStack(
-              index: selectedPageIndex,
-              children: [
-                homeScreen(
-                    size: size, textTheme: textTheme, bodyMargin: bodyMargin),
-                profileScreen(
-                    size: size, textTheme: textTheme, bodyMargin: bodyMargin),
-              ],
-            )),
+              child: Obx(
+                () => IndexedStack(
+                  index: selectedPageIndex.value,
+                  children: [
+                    homeScreen(
+                        size: size,
+                        textTheme: textTheme,
+                        bodyMargin: bodyMargin),
+                    profileScreen(
+                        size: size,
+                        textTheme: textTheme,
+                        bodyMargin: bodyMargin),
+                  ],
+                ),
+              ),
+            ),
 
             // Positioned => Extract to BottomNavigation
             BottomNavigation(
               size: size,
               bodyMargin: bodyMargin,
               changeScreen: (int value) {
-                setState(() {
-                  selectedPageIndex = value;
-                });
+                // setState
+                selectedPageIndex.value = value;
               },
             ),
           ],
@@ -161,6 +169,7 @@ class BottomNavigation extends StatelessWidget {
     required this.changeScreen,
   }) : super(key: key);
 
+  //
   final Size size;
   final double bodyMargin;
   final Function(int) changeScreen;
@@ -173,6 +182,7 @@ class BottomNavigation extends StatelessWidget {
       left: 0,
       child: Container(
         height: size.height / 10,
+        //
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: GradiantColors.bottomNavBackGroundColor,
@@ -180,6 +190,7 @@ class BottomNavigation extends StatelessWidget {
             end: Alignment.bottomCenter,
           ),
         ),
+        //
         child: Padding(
           padding: EdgeInsets.only(right: bodyMargin, left: bodyMargin),
           child: Container(
