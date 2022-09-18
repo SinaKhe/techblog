@@ -1,6 +1,6 @@
 # Tech Blog
 
-A Flutter project with GetX.
+A Flutter project.
 
 ## Getting Started
 
